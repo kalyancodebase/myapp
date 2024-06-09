@@ -44,6 +44,14 @@ dependencies:
   flutter_downloader: any
   path_provider: any
   audioplayers: ^5.2.1
+  hive_flutter: ^1.1.0
+  provider: ^6.0.2
+  line_icons: ^2.0.1
+  assets_audio_player: ^3.0.5
+  cached_network_image: ^3.2.0
+  flutter_bloc: ^8.0.1
+  url_launcher: ^6.0.18
+
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +87,14 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts:
+    - family: Proxima
+      fonts:
+        - asset: fonts/Proxima-Nova-Sbold.ttf
+    - family: Proxima Bold
+      fonts:
+        - asset: fonts/Proxima-Nova-Bold.ttf
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

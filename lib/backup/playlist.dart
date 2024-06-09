@@ -6,7 +6,7 @@ class Item {
   Item({required this.title});
 }
 
-class ProfilePage extends StatelessWidget {
+class Playlist extends StatelessWidget {
   final List<Item> items = [
     Item(title: 'Song 1'),
     Item(title: 'Song 2'),
@@ -29,24 +29,26 @@ class ProfilePage extends StatelessWidget {
                   children: <Widget>[
                     ListTile(
                       title: Text(items[index].title),
+                      textColor: Colors.white,
+                      trailing: PopupMenuButton(
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(
+                    value: 'edit',
+                    child: Text('Edit'),
+                  ),
+                  PopupMenuItem(
+                    value: 'delete',
+                    child: Text('Delete'),
+                  )
+                ];
+              },
+              onSelected: (String value){
+                  print('You Click on po up menu item');
+              },
+            ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.play_arrow),
-                          onPressed: () {
-                            // Handle play
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.remove),
-                          onPressed: () {
-                            // Handle remove
-                          },
-                        ),
-                      ],
-                    ),
+                    
                     Divider(
                       height: 1.0,
                       color: Colors.grey,
@@ -64,6 +66,6 @@ class ProfilePage extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(
-    home: ProfilePage(),
+    home: Playlist(),
   ));
 }

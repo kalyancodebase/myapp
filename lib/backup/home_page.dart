@@ -5,15 +5,24 @@ import 'package:googleapis/drive/v3.dart' as drive;
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
-import 'album_details.dart';
+import '../../controllers/main_controller.dart';
+import '../../album_details.dart';
 
 final _SCOPES = [
   'https://www.googleapis.com/auth/drive.metadata',
 ];
 
-void main() => runApp(HomePage());
+void main() => runApp(HomeScreen(con: MainController(),));
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
+
+  const HomeScreen({
+    Key? key,
+    required this.con,
+  }) : super(key: key);
+
+  final MainController con;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
